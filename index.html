@@ -270,12 +270,14 @@
     
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h3>[Lab Name]</h3>
-            <p style="font-size: 14px; color: #bdc3c7; margin: 5px 0 0 0;">[University Name]</p>
+            <h3>XNET Lab</h3>
+            <p style="font-size: 14px; color: #bdc3c7; margin: 5px 0 0 0;">James Watt School of Engineering - University of Glasgow</p>
         </div>
         
         <nav class="sidebar-nav">
             <a href="#" class="sidebar-nav-item active" onclick="showPage('home')">Home</a>
+            
+            <a href="#" class="sidebar-nav-item" onclick="showPage('about')">About Us</a>
             
             <div class="sidebar-dropdown">
                 <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this); showPage('research')">
@@ -285,9 +287,8 @@
                     </span>
                 </a>
                 <div class="sidebar-dropdown-content">
-                    <a href="#" onclick="showPage('research')">Overview</a>
+                    <a href="#">Research Themes</a>
                     <a href="#">Current Projects</a>
-                    <a href="#">Research Areas</a>
                     <a href="#">Equipment & Facilities</a>
                 </div>
             </div>
@@ -310,18 +311,20 @@
             <div class="sidebar-dropdown">
                 <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this); showPage('publications')">
                     <span class="sidebar-dropdown-toggle">
-                        Publications
+                        Outputs
                         <span class="dropdown-arrow-sidebar">▼</span>
                     </span>
                 </a>
                 <div class="sidebar-dropdown-content">
-                    <a href="#" onclick="showPage('publications')">Recent Papers</a>
-                    <a href="#">Conference Talks</a>
-                    <a href="#">Thesis Archive</a>
+                    <a href="#" onclick="showPage('publications')">Publications</a>
+                    <a href="#">Data Sets</a>
+                    <a href="#">Demo Videos</a>
+                    <a href="#">Patents</a>
+                    <a href="#">Spin Outs</a>
                 </div>
             </div>
             
-            <a href="#" class="sidebar-nav-item" onclick="showPage('contact')">Contact</a>
+            <a href="#" class="sidebar-nav-item" onclick="showPage('contact')">Contact Us</a>
         </nav>
     </div>
 
@@ -335,6 +338,81 @@
     </div>
 
     <div class="wireframe-container" id="wireframe-container">
+        <!-- ABOUT US PAGE -->
+        <div id="about" class="page">
+            <div class="header">
+                <h2>About Us</h2>
+            </div>
+            
+            <h1 class="page-title">About Our Lab</h1>
+            
+            <div class="content-section">
+                <h3>Our Mission</h3>
+                <div class="two-col">
+                    <div>
+                        <p class="wireframe-text">Detailed mission statement explaining the lab's purpose, vision, and core values. This section outlines what drives our research and our commitment to advancing knowledge in our field.</p>
+                    </div>
+                    <div class="placeholder-img">[Mission/Vision Image]</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Our History</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Historical Photo/Timeline]</div>
+                    <div>
+                        <p class="wireframe-text">When the lab was founded, key milestones, major achievements, and how we've evolved over the years. Important breakthroughs and recognition received.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Research Philosophy</h3>
+                <p class="wireframe-text">Our approach to research, methodologies we emphasize, collaborative principles, and how we balance theoretical and applied work. What makes our research unique.</p>
+            </div>
+            
+            <div class="content-section">
+                <h3>Lab Culture & Values</h3>
+                <div class="three-col">
+                    <div class="content-section">
+                        <h4>Collaboration</h4>
+                        <div class="placeholder-img small">[Icon/Image]</div>
+                        <p class="wireframe-text">How we work together and support each other's growth</p>
+                    </div>
+                    <div class="content-section">
+                        <h4>Innovation</h4>
+                        <div class="placeholder-img small">[Icon/Image]</div>
+                        <p class="wireframe-text">Our commitment to pushing boundaries and creative thinking</p>
+                    </div>
+                    <div class="content-section">
+                        <h4>Excellence</h4>
+                        <div class="placeholder-img small">[Icon/Image]</div>
+                        <p class="wireframe-text">High standards in research, education, and professional development</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Facilities & Resources</h3>
+                <div class="two-col">
+                    <div>
+                        <p class="wireframe-text">Description of lab equipment, computational resources, specialized facilities, and any unique capabilities that enable our research.</p>
+                    </div>
+                    <div class="placeholder-img">[Lab Facilities Photo]</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Partnerships & Collaborations</h3>
+                <p class="wireframe-text">Academic institutions, industry partners, government agencies, and international collaborations that enhance our research capabilities and impact.</p>
+                <div class="three-col">
+                    <div class="placeholder-img small">[Partner Logo 1]</div>
+                    <div class="placeholder-img small">[Partner Logo 2]</div>
+                    <div class="placeholder-img small">[Partner Logo 3]</div>
+                </div>
+            </div>
+        </div>
+
         <!-- HOME PAGE -->
         <div id="home" class="page active">
             <div class="header">
@@ -343,7 +421,7 @@
             
             <div class="hero">
                 <div class="placeholder-img large">[Hero Image/Video]</div>
-                <h1>Welcome to [Lab Name]</h1>
+                <h1>Welcome to XNET Lab</h1>
                 <p class="wireframe-text">Brief compelling description of lab's mission and impact</p>
             </div>
             

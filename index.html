@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XNET Lab</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
         
         * {
             margin: 0;
@@ -14,11 +14,34 @@
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
             background: #f5f5f5;
             margin: 0;
             padding: 0;
             display: flex;
+        }
+        
+        /* Font Classes - Organized */
+        .font-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .font-body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Apply fonts to elements */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        p, span, div, a, li {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .wireframe-container {
@@ -92,10 +115,14 @@
         
         .header-text h3 {
             margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
         }
         
         .header-text p {
             margin: 5px 0 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .sidebar-nav {
@@ -110,6 +137,8 @@
             border-bottom: 1px solid #34495e;
             cursor: pointer;
             transition: background 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .sidebar-nav-item:hover {
@@ -148,6 +177,8 @@
             text-decoration: none;
             border-bottom: 1px solid #2c3e50;
             font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .sidebar-dropdown-content a:hover {
@@ -167,6 +198,8 @@
             cursor: pointer;
             border-radius: 3px;
             transition: left 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .sidebar-toggle.sidebar-collapsed {
@@ -194,6 +227,11 @@
             border-bottom: 1px solid #bdc3c7;
         }
         
+        .header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
         .nav {
             display: none;
         }
@@ -204,6 +242,16 @@
             margin-bottom: 30px;
             text-align: center;
             background: #fafafa;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .content-section {
@@ -234,6 +282,8 @@
             justify-content: center;
             background: #f5f5f5;
             margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .placeholder-img.large {
@@ -248,6 +298,8 @@
             color: #666;
             font-style: italic;
             margin: 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .footer {
@@ -257,27 +309,12 @@
             background: #f9f9f9;
         }
         
-        .sidebar-header h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-        }
-        
         .page-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 24px;
             margin-bottom: 20px;
             color: #333;
-        }
-        
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-        }
-        
-        .header h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
         }
         
         .controls {
@@ -292,6 +329,8 @@
             border: 1px solid #666;
             background: white;
             cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .control-btn:hover, .control-btn.active {
@@ -311,6 +350,16 @@
             margin-bottom: 15px;
             background: #fafafa;
         }
+        
+        .publication-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .publication-item p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
@@ -319,10 +368,6 @@
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <img src="Images/Logo/Logo.png" alt="XNET Lab Logo" style="width: 70px; height: 50px;">
-            <div class="header-text">
-                <h3>XNET Lab</h3>
-                <p style="font-size: 14px; color: #bdc3c7;">James Watt School of Engineering, University of Glasgow</p>
-            </div>
         </div>
         
         <nav class="sidebar-nav">
@@ -799,166 +844,150 @@
             </div>
         </div>
 
-        <!-- Members PAGE -->
+        <!-- MEMBERS PAGE -->
         <div id="Members" class="page">
             <div class="header">
-                <h2>Our Team</h2>
+                <h2>Members</h2>
             </div>
             
             <h1 class="page-title">Our Team</h1>
             
             <div class="content-section">
-                <h3>Director</h3>
-                <div class="two-col">
-                    <img src="Images/Members/DrShujaAnsari.jpg" alt="XNET Lab Logo" style="width: 500px; height: 700px;">
-                    <div>
-                        <h4>Dr. Shuja Ansari</h4>
-                        <p style="color: #333; line-height: 1.6; font-size: 14px;">With expertise in 5G/6G, IoT systems, AI-driven networks, Open RAN, RFID, and secure autonomous systems, Dr Ansari leads a team that merges academic excellence with enterprise-facing innovation. His vision is to accelerate the technology readiness of experimental ideas and guide them into deployable, validated, and secure solutions that serve national and global needs.</p>
+                <h3>Faculty</h3>
+                <div class="three-col">
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Faculty Photo 1]</div>
+                        <h4>Dr. Name 1</h4>
+                        <p class="wireframe-text">Position, Research interests</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Faculty Photo 2]</div>
+                        <h4>Dr. Name 2</h4>
+                        <p class="wireframe-text">Position, Research interests</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Faculty Photo 3]</div>
+                        <h4>Dr. Name 3</h4>
+                        <p class="wireframe-text">Position, Research interests</p>
                     </div>
                 </div>
             </div>
             
             <div class="content-section">
-                <h3>Co-Director</h3>
-                <div class="two-col">
-                    <img src="Images/Members/DrBurakKizilkaya.jpg" alt="XNET Lab Logo" style="width: 300px; height: 300px;">
-                    <div>
-                        <h4>Dr. Burak Kizilkaya</h4>
-                        <p style="color: #333; line-height: 1.6; font-size: 14px;">Dr Kizilkaya's research lies at the intersection of robotics, next-generation communications, immersive technologies, networked robotics, smart cities, and IoT applications, with a strong focus on real-world impact. His work advances low-latency, resilient telerobotic and IoT systems for critical environments and emergency applications. His vision is to enable intelligent, secure, and connected systems that can operate reliably in complex environments, advancing resilience, sustainability, and the safe integration of autonomy.</p>
+                <h3>PhD Students</h3>
+                <div class="three-col">
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Student Photo 1]</div>
+                        <h4>Student Name 1</h4>
+                        <p class="wireframe-text">Research topic</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Student Photo 2]</div>
+                        <h4>Student Name 2</h4>
+                        <p class="wireframe-text">Research topic</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Student Photo 3]</div>
+                        <h4>Student Name 3</h4>
+                        <p class="wireframe-text">Research topic</p>
                     </div>
                 </div>
             </div>
             
             <div class="content-section">
-                <h3>Governance</h3>
-                <div class="two-col">
-                    <div class="placeholder-img">[Photo]</div>
-                    <div>
-                        <h4> Professor Muhammad Imran </h4>
-                        <p style="color: #333; line-height: 1.6; font-size: 14px;">Professor of Communication Systems / Dean Transnational Engineering Education, Head of School, James Watt School of Engineering</p>
+                <h3>Research Staff</h3>
+                <div class="three-col">
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Staff Photo 1]</div>
+                        <h4>Staff Name 1</h4>
+                        <p class="wireframe-text">Role, specialization</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Staff Photo 2]</div>
+                        <h4>Staff Name 2</h4>
+                        <p class="wireframe-text">Role, specialization</p>
+                    </div>
+                    <div class="profile-card">
+                        <div class="placeholder-img">[Staff Photo 3]</div>
+                        <h4>Staff Name 3</h4>
+                        <p class="wireframe-text">Role, specialization</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="content-section">
-                <h3>Governance</h3>
-                <div class="two-col">
-                    <div class="placeholder-img">[Photo]</div>
-                    <div>
-                        <h4> Professor Qammer Abbasi </h4>
-                        <p style="color: #333; line-height: 1.6; font-size: 14px;">His research interests include antennas for 5G and 6G,  Bio-Electromagnetics, nano communication, Integrated sensing and communication for cognitive citites,  Reconfigurable intelligent surfaces, Terahertz sensing, internet of things, biomedical applications of millimeter and terahertz communication, wearable and flexible sensors, antenna interaction with human body, Implants, body centric wireless communication issues,  non-invasive health care solutions, physical layer security for wearable/implant communication.</p>
-                    </div>
-                </div>
-            </div>
-            
         </div>
 
         <!-- PUBLICATIONS PAGE -->
         <div id="publications" class="page">
             <div class="header">
-                <h2>[Lab Name] - [University Name]</h2>
-                <nav class="nav">
-                    <a href="#" class="nav-item" onclick="showPage('home')">Home</a>
-                    <a href="#" class="nav-item" onclick="showPage('research')">Research</a>
-                    <a href="#" class="nav-item" onclick="showPage('Members')">Members</a>
-                    <a href="#" class="nav-item active" onclick="showPage('publications')">Publications</a>
-                    <a href="#" class="nav-item" onclick="showPage('contact')">Contact</a>
-                </nav>
+                <h2>Publications</h2>
             </div>
             
-            <h1 class="page-title">Publications & Presentations</h1>
+            <h1 class="page-title">Our Publications</h1>
             
             <div class="content-section">
-                <h3>Recent Publications (2024-2025)</h3>
+                <h3>Recent Publications</h3>
                 <div class="publication-item">
-                    <h4>Paper Title</h4>
-                    <p class="wireframe-text">Authors (2025). Journal Name, Volume(Issue), pages. DOI/Link</p>
+                    <h4>Paper Title 1</h4>
+                    <p class="wireframe-text">Authors, Journal/Conference, Year. Brief description of the work and its significance.</p>
                 </div>
                 <div class="publication-item">
-                    <h4>Paper Title</h4>
-                    <p class="wireframe-text">Authors (2024). Journal Name, Volume(Issue), pages. DOI/Link</p>
+                    <h4>Paper Title 2</h4>
+                    <p class="wireframe-text">Authors, Journal/Conference, Year. Brief description of the work and its significance.</p>
                 </div>
                 <div class="publication-item">
-                    <h4>Paper Title</h4>
-                    <p class="wireframe-text">Authors (2024). Journal Name, Volume(Issue), pages. DOI/Link</p>
+                    <h4>Paper Title 3</h4>
+                    <p class="wireframe-text">Authors, Journal/Conference, Year. Brief description of the work and its significance.</p>
                 </div>
             </div>
             
             <div class="content-section">
-                <h3>Conference Presentations</h3>
-                <div class="publication-item">
-                    <h4>Presentation Title</h4>
-                    <p class="wireframe-text">Conference Name, Location, Date</p>
-                </div>
-                <div class="publication-item">
-                    <h4>Presentation Title</h4>
-                    <p class="wireframe-text">Conference Name, Location, Date</p>
+                <h3>By Year</h3>
+                <div class="wireframe-text">
+                    Links to publications organized by year
                 </div>
             </div>
             
             <div class="content-section">
-                <h3>Archive</h3>
-                <p class="wireframe-text">Links to complete publication list by year (2023, 2022, 2021, etc.)</p>
+                <h3>By Topic</h3>
+                <div class="wireframe-text">
+                    Links to publications organized by research area/topic
+                </div>
             </div>
         </div>
 
         <!-- CONTACT PAGE -->
         <div id="contact" class="page">
             <div class="header">
-                <h2>[Lab Name] - [University Name]</h2>
-                <nav class="nav">
-                    <a href="#" class="nav-item" onclick="showPage('home')">Home</a>
-                    <a href="#" class="nav-item" onclick="showPage('research')">Research</a>
-                    <a href="#" class="nav-item" onclick="showPage('Members')">Members</a>
-                    <a href="#" class="nav-item" onclick="showPage('publications')">Publications</a>
-                    <a href="#" class="nav-item active" onclick="showPage('contact')">Contact</a>
-                </nav>
+                <h2>Contact Us</h2>
             </div>
             
-            <h1 class="page-title">Contact Us</h1>
+            <h1 class="page-title">Get In Touch</h1>
             
-            <div class="two-col">
-                <div class="content-section">
-                    <h3>Lab Information</h3>
-                    <p class="wireframe-text">
-                        <strong>[Lab Name]</strong><br>
-                        Department of [Department]<br>
-                        [University Name]<br>
-                        [Building Name], Room [Number]<br>
-                        [Address]<br><br>
+            <div class="content-section">
+                <h3>Lab Information</h3>
+                <div class="two-col">
+                    <div>
+                        <h4>Address</h4>
+                        <p class="wireframe-text">University of Glasgow<br>James Watt School of Engineering<br>Glasgow, Scotland, UK</p>
                         
-                        Phone: [Phone Number]<br>
-                        Email: [Lab Email]
-                    </p>
-                </div>
-                
-                <div class="content-section">
-                    <h3>Principal Investigator</h3>
-                    <p class="wireframe-text">
-                        <strong>Dr. [Name]</strong><br>
-                        Office: [Building], Room [Number]<br>
-                        Phone: [Phone]<br>
-                        Email: [Email]<br><br>
+                        <h4>Email</h4>
+                        <p class="wireframe-text">contact@xnetlab.gla.ac.uk</p>
                         
-                        Office Hours: [Days/Times]
-                    </p>
+                        <h4>Phone</h4>
+                        <p class="wireframe-text">+44 (0)141 xxx xxxx</p>
+                    </div>
+                    <div class="placeholder-img">[Map/Building Photo]</div>
                 </div>
             </div>
             
             <div class="content-section">
-                <h3>Prospective Students</h3>
-                <p class="wireframe-text">Information about joining the lab, application requirements, and current openings for graduate/undergraduate researchers.</p>
+                <h3>Interested in Joining?</h3>
+                <p class="wireframe-text">Information about research opportunities, application processes, and current openings for students and researchers.</p>
             </div>
             
             <div class="content-section">
-                <h3>Collaborations</h3>
-                <p class="wireframe-text">Information for potential collaborators, visiting researchers, and industry partnerships.</p>
-            </div>
-            
-            <div class="content-section">
-                <h3>Location</h3>
-                <div class="placeholder-img large">[Campus Map/Building Location]</div>
-                <p class="wireframe-text">Directions to lab, parking information, public transit options</p>
+                <h3>Industry Partnerships</h3>
+                <p class="wireframe-text">Contact information for industry collaborations, technology transfer, and commercial partnerships.</p>
             </div>
         </div>
     </div>
@@ -972,39 +1001,38 @@
             // Show selected page
             document.getElementById(pageId).classList.add('active');
             
-            // Update sidebar navigation
-            const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
-            sidebarNavItems.forEach(item => item.classList.remove('active'));
+            // Update navigation
+            const navItems = document.querySelectorAll('.sidebar-nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
             
-            // Find and activate the correct sidebar item
-            const targetNavItem = document.querySelector(`[onclick*="showPage('${pageId}')"]`);
-            if (targetNavItem && targetNavItem.classList.contains('sidebar-nav-item')) {
-                targetNavItem.classList.add('active');
+            // Find and activate current nav item
+            const currentNavItem = document.querySelector(`[onclick*="showPage('${pageId}')"]`);
+            if (currentNavItem) {
+                currentNavItem.classList.add('active');
+            }
+            
+            // Update control buttons
+            const controlBtns = document.querySelectorAll('.control-btn');
+            controlBtns.forEach(btn => btn.classList.remove('active'));
+            
+            const currentControlBtn = document.querySelector(`.control-btn[onclick*="showPage('${pageId}')"]`);
+            if (currentControlBtn) {
+                currentControlBtn.classList.add('active');
             }
         }
         
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
-            const container = document.getElementById('wireframe-container');
-            const toggle = document.querySelector('.sidebar-toggle');
+            const wireframeContainer = document.getElementById('wireframe-container');
+            const toggleBtn = document.querySelector('.sidebar-toggle');
             
             sidebar.classList.toggle('collapsed');
-            container.classList.toggle('sidebar-collapsed');
-            toggle.classList.toggle('sidebar-collapsed');
+            wireframeContainer.classList.toggle('sidebar-collapsed');
+            toggleBtn.classList.toggle('sidebar-collapsed');
         }
         
         function toggleDropdown(element) {
             const dropdown = element.closest('.sidebar-dropdown');
-            
-            // Close other dropdowns
-            const allDropdowns = document.querySelectorAll('.sidebar-dropdown');
-            allDropdowns.forEach(d => {
-                if (d !== dropdown) {
-                    d.classList.remove('open');
-                }
-            });
-            
-            // Toggle current dropdown
             dropdown.classList.toggle('open');
         }
     </script>

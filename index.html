@@ -67,6 +67,35 @@
             padding: 20px;
             border-bottom: 1px solid #34495e;
             background: #34495e;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed #bdc3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2c3e50;
+            color: #bdc3c7;
+            font-size: 12px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        
+        .header-text {
+            flex: 1;
+        }
+        
+        .header-text h3 {
+            margin: 0;
+        }
+        
+        .header-text p {
+            margin: 5px 0 0 0;
         }
         
         .sidebar-nav {
@@ -289,8 +318,11 @@
     
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h3>XNET Lab</h3>
-            <p style="font-size: 14px; color: #bdc3c7; margin: 5px 0 0 0;">James Watt School of Engineering - University of Glasgow</p>
+            <div class="logo-placeholder">[LOGO]</div>
+            <div class="header-text">
+                <h3>XNET Lab</h3>
+                <p style="font-size: 14px; color: #bdc3c7;">James Watt School of Engineering - University of Glasgow</p>
+            </div>
         </div>
         
         <nav class="sidebar-nav">
@@ -306,14 +338,26 @@
                     </span>
                 </a>
                 <div class="sidebar-dropdown-content">
-                    <a href="#">Research Themes</a>
-                    <a href="#">Current Projects</a>
-                    <a href="#">Equipment & Facilities</a>
+                    <a href="#" onclick="showPage('research-themes')">Research Themes</a>
+                    <a href="#" onclick="showPage('current-projects')">Current Projects</a>
+                    <a href="#" onclick="showPage('equipment-facilities')">Equipment & Facilities</a>
                 </div>
             </div>
             
-            <a href="#" class="sidebar-nav-item" onclick="showPage('Members')">Members</a>
-            
+            <div class="sidebar-dropdown">
+                <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this); showPage('people')">
+                    <span class="sidebar-dropdown-toggle">
+                        People
+                        <span class="dropdown-arrow-sidebar">▼</span>
+                    </span>
+                </a>
+                <div class="sidebar-dropdown-content">
+                    <a href="#" onclick="showPage('people')">Faculty</a>
+                    <a href="#">Graduate Students</a>
+                    <a href="#">Undergraduates</a>
+                    <a href="#">Alumni</a>
+                </div>
+            </div>
             
             <div class="sidebar-dropdown">
                 <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this); showPage('publications')">
@@ -324,10 +368,10 @@
                 </a>
                 <div class="sidebar-dropdown-content">
                     <a href="#" onclick="showPage('publications')">Publications</a>
-                    <a href="#">Data Sets</a>
-                    <a href="#">Demo Videos</a>
-                    <a href="#">Patents</a>
-                    <a href="#">Spin Outs</a>
+                    <a href="#" onclick="showPage('data-sets')">Data Sets</a>
+                    <a href="#" onclick="showPage('demo-videos')">Demo Videos</a>
+                    <a href="#" onclick="showPage('patents')">Patents</a>
+                    <a href="#" onclick="showPage('spin-outs')">Spin Outs</a>
                 </div>
             </div>
             
@@ -345,6 +389,236 @@
     </div>
 
     <div class="wireframe-container" id="wireframe-container">
+        <!-- RESEARCH THEMES PAGE -->
+        <div id="research-themes" class="page">
+            <div class="header">
+                <h2>Research Themes</h2>
+            </div>
+            
+            <h1 class="page-title">Our Research Themes</h1>
+            
+            <div class="content-section">
+                <h3>Theme 1: Next-Generation Networks</h3>
+                <div class="two-col">
+                    <div>
+                        <p class="wireframe-text">Research focus on 5G/6G technologies, Open RAN, AI-driven networks, and autonomous connectivity solutions.</p>
+                    </div>
+                    <div class="placeholder-img">[Theme 1 Image]</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Theme 2: Cyber-Physical Systems</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Theme 2 Image]</div>
+                    <div>
+                        <p class="wireframe-text">Integration of physical and digital domains through IoT, robotics, and intelligent systems.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Theme 3: Secure Autonomous Systems</h3>
+                <div class="two-col">
+                    <div>
+                        <p class="wireframe-text">Development of secure, resilient autonomous systems for critical applications and emergency scenarios.</p>
+                    </div>
+                    <div class="placeholder-img">[Theme 3 Image]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CURRENT PROJECTS PAGE -->
+        <div id="current-projects" class="page">
+            <div class="header">
+                <h2>Current Projects</h2>
+            </div>
+            
+            <h1 class="page-title">Our Current Projects</h1>
+            
+            <div class="content-section">
+                <h3>Project Alpha</h3>
+                <div class="two-col">
+                    <div>
+                        <h4>Funding: [Grant Agency]</h4>
+                        <p class="wireframe-text">Project description, objectives, timeline, and expected outcomes.</p>
+                    </div>
+                    <div class="placeholder-img">[Project Alpha Image]</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Project Beta</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Project Beta Image]</div>
+                    <div>
+                        <h4>Funding: [Industry Partner]</h4>
+                        <p class="wireframe-text">Project description, objectives, timeline, and expected outcomes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Project Gamma</h3>
+                <div class="two-col">
+                    <div>
+                        <h4>Funding: [International Collaboration]</h4>
+                        <p class="wireframe-text">Project description, objectives, timeline, and expected outcomes.</p>
+                    </div>
+                    <div class="placeholder-img">[Project Gamma Image]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EQUIPMENT & FACILITIES PAGE -->
+        <div id="equipment-facilities" class="page">
+            <div class="header">
+                <h2>Equipment & Facilities</h2>
+            </div>
+            
+            <h1 class="page-title">Our Equipment & Facilities</h1>
+            
+            <div class="content-section">
+                <h3>Advanced Communications Lab</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Comm Lab Photo]</div>
+                    <div>
+                        <p class="wireframe-text">5G/6G testing equipment, software-defined radios, network analyzers, and wireless communication testbeds.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Robotics & IoT Laboratory</h3>
+                <div class="two-col">
+                    <div>
+                        <p class="wireframe-text">Robotic platforms, sensor networks, embedded systems, and IoT development kits for cyber-physical integration.</p>
+                    </div>
+                    <div class="placeholder-img">[Robotics Lab Photo]</div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Computational Resources</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Computing Resources Image]</div>
+                    <div>
+                        <p class="wireframe-text">High-performance computing clusters, GPU arrays for AI/ML workloads, and cloud computing resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DATA SETS PAGE -->
+        <div id="data-sets" class="page">
+            <div class="header">
+                <h2>Data Sets</h2>
+            </div>
+            
+            <h1 class="page-title">Our Data Sets</h1>
+            
+            <div class="content-section">
+                <h3>Available Datasets</h3>
+                <div class="publication-item">
+                    <h4>5G Network Performance Dataset</h4>
+                    <p class="wireframe-text">Comprehensive dataset of 5G network performance metrics collected across various environments and conditions.</p>
+                </div>
+                <div class="publication-item">
+                    <h4>IoT Sensor Data Collection</h4>
+                    <p class="wireframe-text">Multi-modal sensor data from distributed IoT deployments for smart city applications.</p>
+                </div>
+                <div class="publication-item">
+                    <h4>Robotics Navigation Dataset</h4>
+                    <p class="wireframe-text">Robot navigation and perception data collected in complex indoor and outdoor environments.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEMO VIDEOS PAGE -->
+        <div id="demo-videos" class="page">
+            <div class="header">
+                <h2>Demo Videos</h2>
+            </div>
+            
+            <h1 class="page-title">Our Demo Videos</h1>
+            
+            <div class="content-section">
+                <h3>Technology Demonstrations</h3>
+                <div class="three-col">
+                    <div class="content-section">
+                        <div class="placeholder-img">[Video Thumbnail 1]</div>
+                        <h4>5G Network Slicing Demo</h4>
+                        <p class="wireframe-text">Live demonstration of dynamic network slicing capabilities</p>
+                    </div>
+                    <div class="content-section">
+                        <div class="placeholder-img">[Video Thumbnail 2]</div>
+                        <h4>Autonomous Robot Navigation</h4>
+                        <p class="wireframe-text">Real-time autonomous navigation in complex environments</p>
+                    </div>
+                    <div class="content-section">
+                        <div class="placeholder-img">[Video Thumbnail 3]</div>
+                        <h4>IoT System Integration</h4>
+                        <p class="wireframe-text">End-to-end IoT system deployment and management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PATENTS PAGE -->
+        <div id="patents" class="page">
+            <div class="header">
+                <h2>Patents</h2>
+            </div>
+            
+            <h1 class="page-title">Our Patents</h1>
+            
+            <div class="content-section">
+                <h3>Patent Portfolio</h3>
+                <div class="publication-item">
+                    <h4>Adaptive Network Optimization System</h4>
+                    <p class="wireframe-text">Patent Number: [Patent #] - Method for dynamic optimization of network resources using AI-driven algorithms</p>
+                </div>
+                <div class="publication-item">
+                    <h4>Secure IoT Communication Protocol</h4>
+                    <p class="wireframe-text">Patent Number: [Patent #] - Novel security protocol for IoT device communication in critical infrastructure</p>
+                </div>
+                <div class="publication-item">
+                    <h4>Autonomous System Coordination Framework</h4>
+                    <p class="wireframe-text">Patent Number: [Patent #] - Framework for coordinating multiple autonomous systems in complex environments</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPIN OUTS PAGE -->
+        <div id="spin-outs" class="page">
+            <div class="header">
+                <h2>Spin Outs</h2>
+            </div>
+            
+            <h1 class="page-title">Our Spin-Out Companies</h1>
+            
+            <div class="content-section">
+                <h3>Commercial Ventures</h3>
+                <div class="two-col">
+                    <div class="content-section">
+                        <div class="placeholder-img">[Company Logo 1]</div>
+                        <h4>TechVenture Alpha</h4>
+                        <p class="wireframe-text">Founded: 2023<br>Focus: Next-generation network solutions<br>Status: Early-stage funding secured</p>
+                    </div>
+                    <div class="content-section">
+                        <div class="placeholder-img">[Company Logo 2]</div>
+                        <h4>Autonomous Systems Beta</h4>
+                        <p class="wireframe-text">Founded: 2024<br>Focus: Secure autonomous systems<br>Status: Technology validation phase</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Technology Transfer</h3>
+                <p class="wireframe-text">Information about our technology transfer process, licensing opportunities, and how we support researchers in commercializing their innovations.</p>
+            </div>
+        </div>
+
         <!-- ABOUT US PAGE -->
         <div id="about" class="page">
             <div class="header">
@@ -538,8 +812,8 @@
             </div>
         </div>
 
-        <!-- PEOPLE PAGE -->
-        <div id="people" class="page">
+        <!-- MEMBERS PAGE -->
+        <div id="members" class="page">
             <div class="header">
                 <h2>Our Team</h2>
             </div>
@@ -547,15 +821,23 @@
             <h1 class="page-title">Our Team</h1>
             
             <div class="content-section">
-                <h3>Principal Investigator</h3>
+                <h3>Director</h3>
                 <div class="two-col">
-                    <div class="placeholder-img">[PI Photo]</div>
+                    <div class="placeholder-img">[Director Photo]</div>
                     <div>
-                        <h4>Dr. [Name]</h4>
-                        <p class="wireframe-text">Title, Department<br>
-                        Education background<br>
-                        Research interests<br>
-                        Email, Office location</p>
+                        <h4>Dr. Shuja Ansari</h4>
+                        <p style="color: #333; line-height: 1.6; font-size: 14px;">With expertise in 5G/6G, IoT systems, AI-driven networks, Open RAN, RFID, and secure autonomous systems, Dr Ansari leads a team that merges academic excellence with enterprise-facing innovation. His vision is to accelerate the technology readiness of experimental ideas and guide them into deployable, validated, and secure solutions that serve national and global needs.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Co-Director</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Co-Director Photo]</div>
+                    <div>
+                        <h4>Dr. Burak Kizilkaya</h4>
+                        <p style="color: #333; line-height: 1.6; font-size: 14px;">Dr Kizilkaya's research lies at the intersection of robotics, next-generation communications, immersive technologies, networked robotics, smart cities, and IoT applications, with a strong focus on real-world impact. His work advances low-latency, resilient telerobotic and IoT systems for critical environments and emergency applications. His vision is to enable intelligent, secure, and connected systems that can operate reliably in complex environments, advancing resilience, sustainability, and the safe integration of autonomy.</p>
                     </div>
                 </div>
             </div>

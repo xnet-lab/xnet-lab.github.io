@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XNET Lab</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
         
         * {
             margin: 0;
@@ -14,16 +14,25 @@
         }
         
         body {
-            font-family: Montserrat, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
             background: #f5f5f5;
             margin: 0;
             padding: 0;
             display: flex;
         }
         
-        /* Center all headers */
+        /* Center all headers and apply ExtraBold font */
         h1, h2, h3, h4, h5, h6 {
             text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        /* Apply Regular font to all other text elements */
+        p, span, div, a, li, button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .wireframe-container {
@@ -115,6 +124,8 @@
             border-bottom: 1px solid #34495e;
             cursor: pointer;
             transition: background 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .sidebar-nav-item:hover {
@@ -153,6 +164,8 @@
             text-decoration: none;
             border-bottom: 1px solid #2c3e50;
             font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
         
         .sidebar-dropdown-content a:hover {

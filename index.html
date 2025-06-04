@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XNET Lab</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
         
         * {
             margin: 0;
@@ -14,8 +14,7 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
+            font-family: Arial, sans-serif;
             background: #f5f5f5;
             margin: 0;
             padding: 0;
@@ -281,18 +280,6 @@
             font-weight: 800;
         }
         
-        /* Main titles - Montserrat ExtraBold */
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-        }
-        
-        /* Tagline text - Montserrat Regular */
-        .hero p:first-of-type {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-        }
-        
         .controls {
             display: none;
         }
@@ -331,14 +318,20 @@
     
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <img src="Images/Logo/Logo.png" alt="XNET Lab Logo" style="width: 70px; height: 50px; object-fit: contain; cursor: pointer;" onclick="showPage('home')">
+            <img src="Images/Logo/Logo.png" alt="XNET Lab Logo" style="width: 70px; height: 50px;">
+            <div class="header-text">
+                <h3>XNET Lab</h3>
+                <p style="font-size: 14px; color: #bdc3c7;">James Watt School of Engineering, University of Glasgow</p>
+            </div>
         </div>
         
         <nav class="sidebar-nav">
+            <a href="#" class="sidebar-nav-item active" onclick="showPage('home')">Home</a>
+            
             <a href="#" class="sidebar-nav-item" onclick="showPage('about')">About Us</a>
             
             <div class="sidebar-dropdown">
-                <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this)">
+                <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this); showPage('research')">
                     <span class="sidebar-dropdown-toggle">
                         Research
                         <span class="dropdown-arrow-sidebar">▼</span>
@@ -351,10 +344,10 @@
                 </div>
             </div>
             
-            <a href="#" class="sidebar-nav-item" onclick="showPage('members')">Members</a>
+            <a href="#" class="sidebar-nav-item" onclick="showPage('Members')">Members</a>
             
             <div class="sidebar-dropdown">
-                <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this)">
+                <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this); showPage('publications')">
                     <span class="sidebar-dropdown-toggle">
                         Outputs
                         <span class="dropdown-arrow-sidebar">▼</span>
@@ -377,7 +370,7 @@
         <h4>Navigate Wireframes</h4>
         <button class="control-btn active" onclick="showPage('home')">Home</button>
         <button class="control-btn" onclick="showPage('research')">Research</button>
-        <button class="control-btn" onclick="showPage('members')">Members</button>
+        <button class="control-btn" onclick="showPage('Members')">Members</button>
         <button class="control-btn" onclick="showPage('publications')">Publications</button>
         <button class="control-btn" onclick="showPage('contact')">Contact</button>
     </div>
@@ -806,7 +799,214 @@
             </div>
         </div>
 
-        <!-- MEMBERS PAGE -->
-        <div id="members" class="page">
+        <!-- Members PAGE -->
+        <div id="Members" class="page">
             <div class="header">
-                <h2>
+                <h2>Our Team</h2>
+            </div>
+            
+            <h1 class="page-title">Our Team</h1>
+            
+            <div class="content-section">
+                <h3>Director</h3>
+                <div class="two-col">
+                    <img src="Images/Members/DrShujaAnsari.jpg" alt="XNET Lab Logo" style="width: 500px; height: 700px;">
+                    <div>
+                        <h4>Dr. Shuja Ansari</h4>
+                        <p style="color: #333; line-height: 1.6; font-size: 14px;">With expertise in 5G/6G, IoT systems, AI-driven networks, Open RAN, RFID, and secure autonomous systems, Dr Ansari leads a team that merges academic excellence with enterprise-facing innovation. His vision is to accelerate the technology readiness of experimental ideas and guide them into deployable, validated, and secure solutions that serve national and global needs.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Co-Director</h3>
+                <div class="two-col">
+                    <img src="Images/Members/DrBurakKizilkaya.jpg" alt="XNET Lab Logo" style="width: 300px; height: 300px;">
+                    <div>
+                        <h4>Dr. Burak Kizilkaya</h4>
+                        <p style="color: #333; line-height: 1.6; font-size: 14px;">Dr Kizilkaya's research lies at the intersection of robotics, next-generation communications, immersive technologies, networked robotics, smart cities, and IoT applications, with a strong focus on real-world impact. His work advances low-latency, resilient telerobotic and IoT systems for critical environments and emergency applications. His vision is to enable intelligent, secure, and connected systems that can operate reliably in complex environments, advancing resilience, sustainability, and the safe integration of autonomy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Governance</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Photo]</div>
+                    <div>
+                        <h4> Professor Muhammad Imran </h4>
+                        <p style="color: #333; line-height: 1.6; font-size: 14px;">Professor of Communication Systems / Dean Transnational Engineering Education, Head of School, James Watt School of Engineering</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Governance</h3>
+                <div class="two-col">
+                    <div class="placeholder-img">[Photo]</div>
+                    <div>
+                        <h4> Professor Qammer Abbasi </h4>
+                        <p style="color: #333; line-height: 1.6; font-size: 14px;">His research interests include antennas for 5G and 6G,  Bio-Electromagnetics, nano communication, Integrated sensing and communication for cognitive citites,  Reconfigurable intelligent surfaces, Terahertz sensing, internet of things, biomedical applications of millimeter and terahertz communication, wearable and flexible sensors, antenna interaction with human body, Implants, body centric wireless communication issues,  non-invasive health care solutions, physical layer security for wearable/implant communication.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- PUBLICATIONS PAGE -->
+        <div id="publications" class="page">
+            <div class="header">
+                <h2>[Lab Name] - [University Name]</h2>
+                <nav class="nav">
+                    <a href="#" class="nav-item" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-item" onclick="showPage('research')">Research</a>
+                    <a href="#" class="nav-item" onclick="showPage('Members')">Members</a>
+                    <a href="#" class="nav-item active" onclick="showPage('publications')">Publications</a>
+                    <a href="#" class="nav-item" onclick="showPage('contact')">Contact</a>
+                </nav>
+            </div>
+            
+            <h1 class="page-title">Publications & Presentations</h1>
+            
+            <div class="content-section">
+                <h3>Recent Publications (2024-2025)</h3>
+                <div class="publication-item">
+                    <h4>Paper Title</h4>
+                    <p class="wireframe-text">Authors (2025). Journal Name, Volume(Issue), pages. DOI/Link</p>
+                </div>
+                <div class="publication-item">
+                    <h4>Paper Title</h4>
+                    <p class="wireframe-text">Authors (2024). Journal Name, Volume(Issue), pages. DOI/Link</p>
+                </div>
+                <div class="publication-item">
+                    <h4>Paper Title</h4>
+                    <p class="wireframe-text">Authors (2024). Journal Name, Volume(Issue), pages. DOI/Link</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Conference Presentations</h3>
+                <div class="publication-item">
+                    <h4>Presentation Title</h4>
+                    <p class="wireframe-text">Conference Name, Location, Date</p>
+                </div>
+                <div class="publication-item">
+                    <h4>Presentation Title</h4>
+                    <p class="wireframe-text">Conference Name, Location, Date</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Archive</h3>
+                <p class="wireframe-text">Links to complete publication list by year (2023, 2022, 2021, etc.)</p>
+            </div>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact" class="page">
+            <div class="header">
+                <h2>[Lab Name] - [University Name]</h2>
+                <nav class="nav">
+                    <a href="#" class="nav-item" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-item" onclick="showPage('research')">Research</a>
+                    <a href="#" class="nav-item" onclick="showPage('Members')">Members</a>
+                    <a href="#" class="nav-item" onclick="showPage('publications')">Publications</a>
+                    <a href="#" class="nav-item active" onclick="showPage('contact')">Contact</a>
+                </nav>
+            </div>
+            
+            <h1 class="page-title">Contact Us</h1>
+            
+            <div class="two-col">
+                <div class="content-section">
+                    <h3>Lab Information</h3>
+                    <p class="wireframe-text">
+                        <strong>[Lab Name]</strong><br>
+                        Department of [Department]<br>
+                        [University Name]<br>
+                        [Building Name], Room [Number]<br>
+                        [Address]<br><br>
+                        
+                        Phone: [Phone Number]<br>
+                        Email: [Lab Email]
+                    </p>
+                </div>
+                
+                <div class="content-section">
+                    <h3>Principal Investigator</h3>
+                    <p class="wireframe-text">
+                        <strong>Dr. [Name]</strong><br>
+                        Office: [Building], Room [Number]<br>
+                        Phone: [Phone]<br>
+                        Email: [Email]<br><br>
+                        
+                        Office Hours: [Days/Times]
+                    </p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h3>Prospective Students</h3>
+                <p class="wireframe-text">Information about joining the lab, application requirements, and current openings for graduate/undergraduate researchers.</p>
+            </div>
+            
+            <div class="content-section">
+                <h3>Collaborations</h3>
+                <p class="wireframe-text">Information for potential collaborators, visiting researchers, and industry partnerships.</p>
+            </div>
+            
+            <div class="content-section">
+                <h3>Location</h3>
+                <div class="placeholder-img large">[Campus Map/Building Location]</div>
+                <p class="wireframe-text">Directions to lab, parking information, public transit options</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update sidebar navigation
+            const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
+            sidebarNavItems.forEach(item => item.classList.remove('active'));
+            
+            // Find and activate the correct sidebar item
+            const targetNavItem = document.querySelector(`[onclick*="showPage('${pageId}')"]`);
+            if (targetNavItem && targetNavItem.classList.contains('sidebar-nav-item')) {
+                targetNavItem.classList.add('active');
+            }
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const container = document.getElementById('wireframe-container');
+            const toggle = document.querySelector('.sidebar-toggle');
+            
+            sidebar.classList.toggle('collapsed');
+            container.classList.toggle('sidebar-collapsed');
+            toggle.classList.toggle('sidebar-collapsed');
+        }
+        
+        function toggleDropdown(element) {
+            const dropdown = element.closest('.sidebar-dropdown');
+            
+            // Close other dropdowns
+            const allDropdowns = document.querySelectorAll('.sidebar-dropdown');
+            allDropdowns.forEach(d => {
+                if (d !== dropdown) {
+                    d.classList.remove('open');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

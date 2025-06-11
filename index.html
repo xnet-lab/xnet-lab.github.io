@@ -36,13 +36,11 @@
         }
         
         .wireframe-container {
-            flex: 1;
             background: white;
             border: 2px solid #333;
-            min-height: 100vh;
+            min-height: calc(100vh - 80px);
             position: relative;
-            margin-left: 250px;
-            transition: margin-left 0.3s ease;
+            margin-top: 80px;
         }
         
         .wireframe-container.sidebar-collapsed {
@@ -59,22 +57,18 @@
             display: block;
         }
         
-        .sidebar {
+        .top-nav {
             position: fixed;
-            left: 0;
             top: 0;
-            width: 250px;
-            height: 100vh;
+            left: 0;
+            width: 100%;
+            height: 80px;
             background: #011C2C;
             color: white;
-            transform: translateX(0);
-            transition: transform 0.3s ease;
             z-index: 1000;
-            overflow-y: auto;
-        }
-        
-        .sidebar.collapsed {
-            transform: translateX(-250px);
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .sidebar-header {
@@ -330,31 +324,189 @@
             margin-bottom: 15px;
             background: #fafafa;
         }
+        
+        .nav-header {
+            padding: 0 20px;
+            border-right: 1px solid #00C8D7;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            height: 100%;
+            min-width: 300px;
+        }
+        
+        .top-nav-menu {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .top-nav-item {
+            display: block;
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid #00C8D7;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            position: relative;
+        }
+        
+        .top-nav-item:hover {
+            background: #00C8D7;
+        }
+        
+        .top-nav-item.active {
+            background: #00C8D7;
+        }
+        
+        .top-nav-dropdown {
+            position: relative;
+        }
+        
+        .top-nav-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .top-nav-dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #1C2B3A;
+            min-width: 200px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            border-left: 1px solid #00C8D7;
+            border-right: 1px solid #00C8D7;
+            border-bottom: 1px solid #00C8D7;
+        }
+        
+        .top-nav-dropdown.open .top-nav-dropdown-content {
+            max-height: 300px;
+        }
+        
+        .top-nav-dropdown-content a {
+            display: block;
+            padding: 15px 20px;
+            color: #bdc3c7;
+            text-decoration: none;
+            border-bottom: 1px solid #011C2C;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+        
+        .top-nav-dropdown-content a:hover {
+            background: #00C8D7;
+            color: white;
+        }
+        
+        .dropdown-arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .top-nav-dropdown.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0 20px;
+            margin-left: auto;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .top-nav {
+                height: auto;
+                min-height: 60px;
+                flex-direction: column;
+            }
+            
+            .nav-header {
+                width: 100%;
+                justify-content: space-between;
+                border-right: none;
+                border-bottom: 1px solid #00C8D7;
+                min-width: auto;
+                height: 60px;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .top-nav-menu {
+                width: 100%;
+                flex-direction: column;
+                display: none;
+            }
+            
+            .top-nav-menu.open {
+                display: flex;
+            }
+            
+            .top-nav-item {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #00C8D7;
+                height: 50px;
+            }
+            
+            .top-nav-dropdown-content {
+                position: static;
+                max-height: none;
+                overflow: visible;
+                border: none;
+            }
+            
+            .wireframe-container {
+                margin-top: 60px;
+            }
+        }
+    </style>
     </style>
 </head>
 <body>
-    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
-    
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
+
+    <div class="top-nav">
+        <div class="nav-header">
             <a href="#" onclick="showPage('home')" style="text-decoration: none;">
-                <img src="Images/Logo/White.png" alt="XNET Lab Logo" style="width: 250px; height: 200px;">
+                <img src="Images/Logo/White.png" alt="XNET Lab Logo" style="width: 200px; height: 60px;">
             </a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </div>
         
-        <nav class="sidebar-nav">
-            <a href="#" class="sidebar-nav-item active" onclick="showPage('home')">Home</a>
+        <nav class="top-nav-menu" id="topNavMenu">
+            <a href="#" class="top-nav-item active" onclick="showPage('home')">Home</a>
             
-            <a href="#" class="sidebar-nav-item" onclick="showPage('about')">About Us</a>
+            <a href="#" class="top-nav-item" onclick="showPage('about')">About Us</a>
             
-            <div class="sidebar-dropdown">
-                <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this)">
-                    <span class="sidebar-dropdown-toggle">
+            <div class="top-nav-dropdown">
+                <a href="#" class="top-nav-item" onclick="toggleTopDropdown(this, event)">
+                    <span class="top-nav-dropdown-toggle">
                         Research
-                        <span class="dropdown-arrow-sidebar">▼</span>
+                        <span class="dropdown-arrow">▼</span>
                     </span>
                 </a>
-                <div class="sidebar-dropdown-content">
+                <div class="top-nav-dropdown-content">
                     <a href="#" onclick="showPage('core-research-themes')">Core Research Themes</a>
                     <a href="#" onclick="showPage('flagship-projects')">Flagship Projects</a>
                     <a href="#" onclick="showPage('equipment-facilities')">Equipment & Facilities</a>
@@ -383,6 +535,7 @@
         </nav>
     </div>
 
+    
     <div class="controls">
         <h4>Navigate Wireframes</h4>
         <button class="control-btn active" onclick="showPage('home')">Home</button>
@@ -1195,21 +1348,14 @@
             }
         }
         
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const container = document.getElementById('wireframe-container');
-            const toggle = document.querySelector('.sidebar-toggle');
+        function toggleTopDropdown(element, event) {
+            event.preventDefault();
+            event.stopPropagation();
             
-            sidebar.classList.toggle('collapsed');
-            container.classList.toggle('sidebar-collapsed');
-            toggle.classList.toggle('sidebar-collapsed');
-        }
-        
-        function toggleDropdown(element) {
-            const dropdown = element.closest('.sidebar-dropdown');
+            const dropdown = element.closest('.top-nav-dropdown');
             
             // Close other dropdowns
-            const allDropdowns = document.querySelectorAll('.sidebar-dropdown');
+            const allDropdowns = document.querySelectorAll('.top-nav-dropdown');
             allDropdowns.forEach(d => {
                 if (d !== dropdown) {
                     d.classList.remove('open');
@@ -1218,6 +1364,11 @@
             
             // Toggle current dropdown
             dropdown.classList.toggle('open');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('topNavMenu');
+            menu.classList.toggle('open');
         }
     </script>
 </body>

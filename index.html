@@ -114,56 +114,12 @@
             padding: 0;
         }
         
-        .sidebar-nav-item {
-            display: block;
-            padding: 15px 20px;
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid #00C8D7;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-        }
-        
         .sidebar-nav-item:hover {
             background: #00C8D7;
         }
         
         .sidebar-nav-item.active {
             background: #00C8D7;
-        }
-        
-        .sidebar-dropdown {
-            position: relative;
-        }
-        
-        .sidebar-dropdown-toggle {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .sidebar-dropdown-content {
-            background: #1C2B3A;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .sidebar-dropdown.open .sidebar-dropdown-content {
-            max-height: 200px;
-        }
-        
-        .sidebar-dropdown-content a {
-            display: block;
-            padding: 10px 40px;
-            color: #bdc3c7;
-            text-decoration: none;
-            border-bottom: 1px solid #011C2C;
-            font-size: 14px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
         }
         
         .sidebar-dropdown-content a:hover {
@@ -191,15 +147,6 @@
         
         .sidebar-toggle:not(.sidebar-collapsed) {
             left: 270px;
-        }
-        
-        .dropdown-arrow-sidebar {
-            font-size: 12px;
-            transition: transform 0.3s ease;
-        }
-        
-        .sidebar-dropdown.open .dropdown-arrow-sidebar {
-            transform: rotate(180deg);
         }
         
         .header {
@@ -516,16 +463,16 @@
                 </div>
             </div>
             
-            <a href="#" class="sidebar-nav-item" onclick="showPage('Members')">Members</a>
-            
-            <div class="sidebar-dropdown">
-                <a href="#" class="sidebar-nav-item" onclick="toggleDropdown(this)">
-                    <span class="sidebar-dropdown-toggle">
+            <a href="#" class="top-nav-item" onclick="showPage('Members')">Members</a>
+
+            <div class="top-nav-dropdown">
+                <a href="#" class="top-nav-item" onclick="toggleTopDropdown(this, event)">
+                    <span class="top-nav-dropdown-toggle">
                         Outputs
-                        <span class="dropdown-arrow-sidebar">▼</span>
+                        <span class="dropdown-arrow">▼</span>
                     </span>
                 </a>
-                <div class="sidebar-dropdown-content">
+                <div class="top-nav-dropdown-content">
                     <a href="#" onclick="showPage('publications')">Publications</a>
                     <a href="#" onclick="showPage('data-sets')">Data Sets</a>
                     <a href="#" onclick="showPage('demo-videos')">Demo Videos</a>
@@ -533,8 +480,8 @@
                     <a href="#" onclick="showPage('spin-outs')">Spin Outs</a>
                 </div>
             </div>
-            
-            <a href="#" class="sidebar-nav-item" onclick="showPage('contact')">Contact Us</a>
+
+            <a href="#" class="top-nav-item" onclick="showPage('contact')">Contact Us</a>
         </nav>
     </div>
 
@@ -1398,6 +1345,21 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('topNavMenu');
             menu.classList.toggle('open');
+        }
+        
+        function toggleDropdown(element) {
+            const dropdown = element.closest('.sidebar-dropdown');
+            
+            // Close other dropdowns
+            const allDropdowns = document.querySelectorAll('.sidebar-dropdown');
+            allDropdowns.forEach(d => {
+                if (d !== dropdown) {
+                    d.classList.remove('open');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('open');
         }
     </script>
 </body>

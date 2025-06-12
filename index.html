@@ -19,7 +19,6 @@
             background: #f5f5f5;
             margin: 0;
             padding: 0;
-            display: flex;
         }
         
         /* Center all headers and apply ExtraBold font */
@@ -47,10 +46,6 @@
             margin-top: 80px;
         }
         
-        .wireframe-container.sidebar-collapsed {
-            margin-left: 0;
-        }
-        
         .page {
             display: none;
             padding: 20px;
@@ -73,15 +68,6 @@
             display: flex;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .sidebar-header {
-            padding: 20px;
-            border-bottom: 1px solid #00C8D7;
-            background: #011C2C;
-            display: flex;
-            align-items: center;
-            gap: 15px;
         }
         
         .logo-placeholder {
@@ -108,45 +94,6 @@
         
         .header-text p {
             margin: 5px 0 0 0;
-        }
-        
-        .sidebar-nav {
-            padding: 0;
-        }
-        
-        .sidebar-nav-item:hover {
-            background: #00C8D7;
-        }
-        
-        .sidebar-nav-item.active {
-            background: #00C8D7;
-        }
-        
-        .sidebar-dropdown-content a:hover {
-            background: #00C8D7;
-            color: white;
-        }
-        
-        .sidebar-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1001;
-            background: #011C2C;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 3px;
-            transition: left 0.3s ease;
-        }
-        
-        .sidebar-toggle.sidebar-collapsed {
-            left: 20px;
-        }
-        
-        .sidebar-toggle:not(.sidebar-collapsed) {
-            left: 270px;
         }
         
         .header {
@@ -219,11 +166,6 @@
             padding: 20px;
             margin-top: 30px;
             background: #f9f9f9;
-        }
-        
-        .sidebar-header h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
         }
         
         .page-title {
@@ -431,7 +373,6 @@
                 margin-top: 60px;
             }
         }
-    </style>
     </style>
 </head>
 <body>
@@ -1347,20 +1288,38 @@
             menu.classList.toggle('open');
         }
         
-        function toggleDropdown(element) {
-            const dropdown = element.closest('.sidebar-dropdown');
-            
-            // Close other dropdowns
-            const allDropdowns = document.querySelectorAll('.sidebar-dropdown');
-            allDropdowns.forEach(d => {
-                if (d !== dropdown) {
-                    d.classList.remove('open');
-                }
-            });
-            
-            // Toggle current dropdown
-            dropdown.classList.toggle('open');
-        }
+        // Close dropdowns when clicking outside
+                document.addEventListener('click', function(event) {
+                    const dropdowns = document.querySelectorAll('.top-nav-dropdown');
+                    dropdowns.forEach(dropdown => {
+                        if (!dropdown.contains(event.target)) {
+                            dropdown.classList.remove('open');
+                        }
+                    });
+                });
+                
+                // Close mobile menu when clicking on a nav item
+                document.querySelectorAll('.top-nav-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const menu = document.getElementById('topNavMenu');
+                        if (menu) {
+                            menu.classList.remove('open');
+                        }
+                    });
+                });
+                
+                // Handle dropdown item clicks
+                document.querySelectorAll('.top-nav-dropdown-content a').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const menu = document.getElementById('topNavMenu');
+                        if (menu) {
+                            menu.classList.remove('open');
+                        }
+                        // Close dropdowns
+                        const openDropdowns = document.querySelectorAll('.top-nav-dropdown.open');
+                        openDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+                    });
+                });
     </script>
 </body>
 </html>

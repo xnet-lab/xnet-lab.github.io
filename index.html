@@ -41,6 +41,10 @@
             min-height: calc(100vh - 80px);
             position: relative;
             margin-top: 80px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 80px;
         }
         
         .wireframe-container.sidebar-collapsed {
@@ -343,7 +347,6 @@
         }
         
         .top-nav-item {
-            display: block;
             padding: 0 20px;
             color: white;
             text-decoration: none;
@@ -1337,15 +1340,41 @@
             // Show selected page
             document.getElementById(pageId).classList.add('active');
             
-            // Update sidebar navigation
-            const sidebarNavItems = document.querySelectorAll('.sidebar-nav-item');
-            sidebarNavItems.forEach(item => item.classList.remove('active'));
+            // Update top navigation
+            const topNavItems = document.querySelectorAll('.top-nav-item');
+            topNavItems.forEach(item => item.classList.remove('active'));
             
-            // Find and activate the correct sidebar item
-            const targetNavItem = document.querySelector(`[onclick*="showPage('${pageId}')"]`);
-            if (targetNavItem && targetNavItem.classList.contains('sidebar-nav-item')) {
-                targetNavItem.classList.add('active');
+            // Find and activate the correct nav item - check both direct links and dropdown parents
+            const directNavItem = Array.from(topNavItems).find(item => {
+                const onclick = item.getAttribute('onclick');
+                return onclick && onclick.includes(`showPage('${pageId}')`);
+            });
+            
+            if (directNavItem) {
+                directNavItem.classList.add('active');
+            } else {
+                // Check if it's a dropdown item and activate parent
+                const dropdownLink = document.querySelector(`[onclick*="showPage('${pageId}')"]`);
+                if (dropdownLink) {
+                    const parentDropdown = dropdownLink.closest('.top-nav-dropdown');
+                    if (parentDropdown) {
+                        const parentNavItem = parentDropdown.querySelector('.top-nav-item');
+                        if (parentNavItem) {
+                            parentNavItem.classList.add('active');
+                        }
+                    }
+                }
             }
+            
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('topNavMenu');
+            if (mobileMenu) {
+                mobileMenu.classList.remove('open');
+            }
+            
+            // Close any open dropdowns
+            const openDropdowns = document.querySelectorAll('.top-nav-dropdown.open');
+            openDropdowns.forEach(dropdown => dropdown.classList.remove('open'));
         }
         
         function toggleTopDropdown(element, event) {

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-    base: '/xis-lab.github.io/xis-lab/',
+    base: '/',
     title: 'XIS Lab',
     description: 'Engineering the future of intelligent, connected and secure systems — University of Glasgow',
     lang: 'en-GB',
